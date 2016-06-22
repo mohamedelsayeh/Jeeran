@@ -1,0 +1,56 @@
+PODS:
+  - Alamofire (3.4.0)
+  - Alamofire-SwiftyJSON (0.1.1):
+    - Alamofire (~> 3.4)
+    - SwiftyJSON (~> 2.3)
+  - Auk (2.1.5):
+    - moa (~> 3.0)
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.7.0)
+  - FBSDKCoreKit (4.12.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.12.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.12.0):
+    - FBSDKCoreKit
+  - LiquidFloatingActionButton (0.1.2)
+  - moa (3.0.0)
+  - ObjectMapper (1.3.0)
+  - RateView (1.2)
+  - SlideMenuControllerSwift (2.1.1)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire-SwiftyJSON
+  - Auk (~> 2.1)
+  - Bolts
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - LiquidFloatingActionButton
+  - ObjectMapper
+  - RateView
+  - SlideMenuControllerSwift
+
+SPEC CHECKSUMS:
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Alamofire-SwiftyJSON: 5812bb37accc36897cc2f2dabb070d8ebcd7ac98
+  Auk: 25fe0c1ac0d22b387eca4c5ea9de48c9caea5c05
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  FBSDKCoreKit: 6e56d5a2a64a755ad4efb5dbeee8f82fb1b99775
+  FBSDKLoginKit: 03f68a8d48c2c8bb81d7eb8097973d483543e1f6
+  FBSDKShareKit: df1491f064cffc8ebcc3fc8b71be94cc190c728e
+  LiquidFloatingActionButton: 12ed6f642365142f85c73eaebef8c40b6590511e
+  moa: 32ca142e67accf6124087abba94ff5c288ad1d7e
+  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
+  RateView: d4d12e9bb76dc23a77a56f4e5c5fb530a3f3f998
+  SlideMenuControllerSwift: 82ada9b04e03538c84d034cf1c09e5849c0113f7
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: 4c729fa2f8b8e0b2605561f8d1404babb3fabb73
+
+COCOAPODS: 1.0.0
