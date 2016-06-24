@@ -29,4 +29,7 @@ target 'Jeeran' do
     # Image Slider Pods
     pod 'Auk', '~> 2.1'
     
+    pod 'AlamofireObjectMapper', '~> 3.0'
+    pod 'AlamofireImage', '~> 2.0'
+    
 end

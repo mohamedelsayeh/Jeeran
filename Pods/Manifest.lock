@@ -3,6 +3,11 @@ PODS:
   - Alamofire-SwiftyJSON (0.1.1):
     - Alamofire (~> 3.4)
     - SwiftyJSON (~> 2.3)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
+  - AlamofireObjectMapper (3.0.0):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
   - Auk (2.1.5):
     - moa (~> 3.0)
   - Bolts (1.7.0):
@@ -26,6 +31,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire-SwiftyJSON
+  - AlamofireImage (~> 2.0)
+  - AlamofireObjectMapper (~> 3.0)
   - Auk (~> 2.1)
   - Bolts
   - FBSDKCoreKit
@@ -39,6 +46,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   Alamofire-SwiftyJSON: 5812bb37accc36897cc2f2dabb070d8ebcd7ac98
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
+  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
   Auk: 25fe0c1ac0d22b387eca4c5ea9de48c9caea5c05
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   FBSDKCoreKit: 6e56d5a2a64a755ad4efb5dbeee8f82fb1b99775
@@ -51,6 +60,6 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 82ada9b04e03538c84d034cf1c09e5849c0113f7
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 4c729fa2f8b8e0b2605561f8d1404babb3fabb73
+PODFILE CHECKSUM: 3ce1d45bfe2f58cfad820879d88ed5db561bc683
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1

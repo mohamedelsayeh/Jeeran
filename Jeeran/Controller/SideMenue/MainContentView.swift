@@ -90,10 +90,14 @@ class MainContentView: UIViewController, FloatingButtonDelegate,ResponseManager 
     }
     
     @IBAction func ServicesTappedOn(sender: AnyObject) {
+//        let storyBoard = UIStoryboard(name: "MainServices", bundle: nil)
+//        let vc = storyBoard.instantiateViewControllerWithIdentifier("Services") as! Discussion
+//        vc.type = JeeranUtil.DISCUSSION
+//        self.navigationController?.pushViewController(vc, animated: true)
         let storyBoard = UIStoryboard(name: "MainServices", bundle: nil)
-        let vc = storyBoard.instantiateViewControllerWithIdentifier("Services") as! Discussion
-        vc.type = JeeranUtil.DISCUSSION
-        self.navigationController?.pushViewController(vc, animated: true)
+        // self.presentViewController(view)
+        self.presentViewController(storyBoard.instantiateViewControllerWithIdentifier("Services"), animated: true, completion: nil)
+
     }
     
     @IBAction func discussionTappedOn(sender: AnyObject) {
