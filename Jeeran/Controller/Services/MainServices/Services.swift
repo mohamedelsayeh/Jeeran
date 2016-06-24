@@ -9,10 +9,11 @@ import UIKit
 import Auk
 import moa
 class Services: UIViewController, UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource{
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var serviceIcon: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
     // var mainServices = ResponseService()
     var names = [ "Food and Beverages", "Shopping"]
     var images = [UIImage(named:"food-icon") ,UIImage(named:"shopping-icon")]
@@ -26,7 +27,9 @@ class Services: UIViewController, UIScrollViewDelegate,UITableViewDelegate,UITab
     
     override func viewDidLoad() {
         tableView.hidden = true
-        serviceIcon = UIImageView(image: UIImage(named: "services-active")!)
+//        serviceIcon = UIImageView(image: UIImage(named: "services-active")!)
+     //   serviceImage.image = UIImage(named: "services-active")!
+        
      //   serviceIcon.image = UIImage(named: "services-active.png")!
         scrollView.delegate = self
         WebserviceManager.getServiceImages(ServicesURLs.servicePlaceImageFeatureURL(), header:["Authorization": ServicesURLs.token], parameters: [:],result: { (images:[String],code:String?) -> Void in
@@ -228,5 +231,33 @@ class Services: UIViewController, UIScrollViewDelegate,UITableViewDelegate,UITab
     @IBAction func Back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func discussionAction(sender: AnyObject) {
+       
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewControllerWithIdentifier("Discussion") as! Discussion
+        vc.type = JeeranUtil.DISCUSSION
+   self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
+    @IBAction func realAction(sender: AnyObject) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewControllerWithIdentifier("RealEstate") as! RealState
+        vc.type = JeeranUtil.REALESTATE
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @IBAction func notificationAction(sender: AnyObject) {
+        
+        
+        
+        
+    }
+    
+    
 }
 

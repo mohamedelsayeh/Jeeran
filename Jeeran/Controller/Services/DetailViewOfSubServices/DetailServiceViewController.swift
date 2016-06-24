@@ -30,6 +30,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
     var servicesReview = [Review]()
     var latitude :Double?
     var longitude :Double?
+    var telephone : String?
     override func viewDidLoad() {
         
         self.navigationItem.title = serviceName
@@ -42,6 +43,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         WebserviceManager.showServicesPlace("http://jeeran.gn4me.com/jeeran_v1/serviceplace/show", header:["Authorization": ServicesURLs.token], parameters: ["service_place_id":sub_service_id!],result: { (servicesPlace :ResponseShowServicePlace,code:String?) -> Void in
             self.serviceShow = servicesPlace
             self.name.text = self.serviceShow?.servicePlace?[0].title
+            self.telephone = self.serviceShow?.servicePlace?[0].mobile_1
             self.rateS.text = String((self.serviceShow?.servicePlace?[0].total_rate)!)
             self.aboutServiceName.text = "About "+(self.serviceShow?.servicePlace?[0].title)!
             
@@ -171,6 +173,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
             //  print("heraratenig",self.servicesPlace[indexPath.row].)
             //  for subService in PapersDataSource.subServicesCategory {
             paper = Paper(caption: "ddd", section: "1", index: 1,rate:3 ,name: self.servicesPlace[indexPath.row].title!)
+            
             print("image", self.servicesPlace[indexPath.row].logo!)
             WebserviceManager.getImage( self.servicesPlace[indexPath.row].logo! , result: { (image, code) in
                 paper!.imageName = image
@@ -228,4 +231,11 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         //        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func CallUs(sender: AnyObject) {
+        
+    //    let url:NSURL = NSURL(string: "tel:"+telephone!)!
+     let url:NSURL = NSURL(string: "tel:"+telephone!)!
+        print("tel ",telephone!)
+        UIApplication.sharedApplication().openURL(url)
+    }
 }
