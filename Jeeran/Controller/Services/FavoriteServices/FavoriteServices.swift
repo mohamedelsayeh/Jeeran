@@ -27,6 +27,16 @@ class FavoriteServices: UITableViewController {
             self.tableView.reloadData()
         })
     }
+//    override func viewWillAppear(animated: Bool) {
+//        WebserviceManager.shoFavoritewServicesPlace(ServicesURLs.servicePlaceFavoriteListURL(),header:["Authorization": ServicesURLs.token], parameters: ["user_id": self.user_id!],result: {(mainServices :ResponseFavoriteServices,code:String?)->Void
+//            in
+//            self.servicesPlaces = mainServices
+//            print("here",self.servicesPlaces?.serviceplaces?.count)
+//            //            print("here",self.servicesPlaces?.serviceplaces![0].favorite_service_place_id!)
+//            self.tableView.hidden = false
+//            self.tableView.reloadData()
+//        })
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -61,7 +71,7 @@ class FavoriteServices: UITableViewController {
         {
         }
         else{
-           print("h==========>>>>>",(self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.logo)!)
+        //   print("h==========>>>>>",(self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.logo)!)
             
                         WebserviceManager.getImage( (self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.logo)! , result: { (image, code) in
                             cell.imageCell.image = image
@@ -103,6 +113,23 @@ class FavoriteServices: UITableViewController {
 ////            let detailService = segue.destinationViewController as! DetailServiceViewController
 //      
 //        }
+    }
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            print("ggggggggggggggg",(self.servicesPlaces?.serviceplaces![indexPath.row].favorite_service_place_id)! )
+            
+            WebserviceManager.deleteServiceFavorit(ServicesURLs.servicePlaceFavoriteDeleteURL(), header: ["Authorization": ServicesURLs.token], parameters: ["favorite_service_place_id" :(self.servicesPlaces?.serviceplaces![indexPath.row].favorite_service_place_id)!], result: { (result, code) in
+                let alert = UIAlertController(title: "Services", message: "Delete favourite service place Done.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                self.servicesPlaces?.serviceplaces?.removeAtIndex(indexPath.row)
+                self.tableView.reloadData()
+            })
+//              self.tableView.reloadData()
+//            deletePlanetIndexPath = indexPath
+//            let planetToDelete = planets[indexPath.row]
+//            confirmDelete(planetToDelete)
+        }
     }
     
 }

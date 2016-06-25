@@ -304,17 +304,18 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         //self.favorite.setColor(UIColor.redColor(), forState: UIControlState.Normal)
         self.favoriteLabel.textColor = UIColor.redColor()
         WebserviceManager.addServiceFavorit(ServicesURLs.servicePlaceFavoriteAddURL(), header:["Authorization":ServicesURLs.token], parameters: ["service_places_id":self.service_place_id!]) { (result, code) in
-            switch result
+            print("ggggggg:::::",(result.result?.errorcode)!)
+            switch (result.result?.errorcode)!
             {
-            case "success":
+            case 0:
         
             let alert = UIAlertController(title: "Services", message: "Add service place Done.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
                 break
-            case "error":
-                let alert = UIAlertController(title: "Services", message: "Add service place Fail.", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            case 3:
+                let alert = UIAlertController(title: "Services", message: result.result?.message!, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 break
             default :
