@@ -17,10 +17,12 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     //  let locationMgr = CLLocationManager()
     var latitude : Double?
     var longitude : Double?
+    var serviceName : String?
+    var servicePlasceName : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Food and Beverages"
+        self.navigationItem.title = serviceName!
         let location = CLLocation(latitude: latitude!, longitude:longitude!)
         let center = CLLocationCoordinate2DMake(location.coordinate.latitude,location.coordinate.longitude)
         let span = MKCoordinateSpanMake(0.05, 0.05)
@@ -28,8 +30,8 @@ class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = center
-        annotation.title = "The Colosseum"
-        annotation.subtitle = "Suse, Egypt"
+        annotation.title = servicePlasceName
+        annotation.subtitle = ", Egypt"
         map.addAnnotation(annotation)
         map.mapType = .Hybrid
         map.setRegion(region, animated: true)

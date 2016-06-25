@@ -121,7 +121,10 @@
                                                     <constraint firstAttribute="height" constant="17" id="KJE-lu-e3o"/>
                                                     <constraint firstAttribute="width" constant="19" id="WdY-tN-3Yj"/>
                                                 </constraints>
-                                                <state key="normal" image="rating-icon"/>
+                                                <state key="normal" backgroundImage="rating-icon"/>
+                                                <connections>
+                                                    <segue destination="5mc-4Y-wwm" kind="show" id="ukM-7D-wNd"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6Z-ra-TjO">
                                                 <rect key="frame" x="66" y="21" width="35" height="21"/>
@@ -133,14 +136,6 @@
                                                 <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqy-9E-vMY">
-                                                <rect key="frame" x="126" y="7" width="19" height="17"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="17" id="1K6-1P-6pK"/>
-                                                    <constraint firstAttribute="width" constant="19" id="NuN-ZX-1AJ"/>
-                                                </constraints>
-                                                <state key="normal" image="favorite-icons"/>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KJ-sZ-pOH">
                                                 <rect key="frame" x="114" y="21" width="50" height="21"/>
                                                 <constraints>
@@ -164,7 +159,11 @@
                                                     <constraint firstAttribute="width" constant="19" id="KpK-Mz-YqY"/>
                                                     <constraint firstAttribute="height" constant="17" id="cdz-Ab-gXi"/>
                                                 </constraints>
-                                                <state key="normal" image="photos-icon"/>
+                                                <state key="normal" backgroundImage="photos-icon"/>
+                                                <connections>
+                                                    <action selector="Showphotos:" destination="a1z-2u-nb5" eventType="touchUpInside" id="qBp-Qn-Nt8"/>
+                                                    <segue destination="bBh-xr-e7V" kind="show" identifier="ViewImages" id="JC3-aW-ftu"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-Ix-i3M">
                                                 <rect key="frame" x="175" y="23" width="50" height="21"/>
@@ -176,6 +175,17 @@
                                                 <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqy-9E-vMY">
+                                                <rect key="frame" x="126" y="7" width="19" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="1K6-1P-6pK"/>
+                                                    <constraint firstAttribute="width" constant="19" id="NuN-ZX-1AJ"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="favorite-icons"/>
+                                                <connections>
+                                                    <action selector="addToFavourite:" destination="a1z-2u-nb5" eventType="touchUpInside" id="bxl-uZ-1ny"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.9912043961" green="1" blue="0.97933375789999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -411,6 +421,8 @@
                         <outlet property="allReviews" destination="ixL-O8-X0a" id="ewK-va-4fd"/>
                         <outlet property="callUs" destination="eG8-f0-EyM" id="dXy-9p-Vub"/>
                         <outlet property="collectionView" destination="8Y8-7b-nkC" id="ABU-Uv-wCr"/>
+                        <outlet property="favorite" destination="vqy-9E-vMY" id="YjN-fo-3f2"/>
+                        <outlet property="favoriteLabel" destination="0KJ-sZ-pOH" id="fe2-UE-GvN"/>
                         <outlet property="loc" destination="hVo-Gq-KW1" id="tgC-q9-FTf"/>
                         <outlet property="locationLabel" destination="g4j-UI-EUl" id="tOv-WN-dnT"/>
                         <outlet property="name" destination="xEo-p3-mKU" id="rZL-4P-UM9"/>
@@ -1505,7 +1517,58 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pma-eS-0gS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2786.5" y="-3544.5"/>
+            <point key="canvasLocation" x="2922.5" y="-2992.5"/>
+        </scene>
+        <!--Photos Show-->
+        <scene sceneID="4uH-UG-U3L">
+            <objects>
+                <viewController id="bBh-xr-e7V" customClass="PhotosShow" customModule="Jeeran" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U1l-Et-D9q"/>
+                        <viewControllerLayoutGuide type="bottom" id="g6d-mv-peS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tuc-iH-Iad">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JlW-Rt-rv6">
+                                <rect key="frame" x="-5" y="64" width="380" height="603"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JlW-Rt-rv6" firstAttribute="leading" secondItem="tuc-iH-Iad" secondAttribute="leading" id="Uew-UR-U37"/>
+                            <constraint firstAttribute="trailing" secondItem="JlW-Rt-rv6" secondAttribute="trailing" id="cju-5x-U2H"/>
+                            <constraint firstAttribute="bottom" secondItem="JlW-Rt-rv6" secondAttribute="bottom" id="trl-aE-tVv"/>
+                            <constraint firstItem="JlW-Rt-rv6" firstAttribute="top" secondItem="U1l-Et-D9q" secondAttribute="bottom" id="zfa-fr-JnL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="JlW-Rt-rv6" id="YqN-vn-f1L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F9H-B7-whD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2922.5" y="-4475.5"/>
+        </scene>
+        <!--Add Review-->
+        <scene sceneID="z2K-XW-Ox5">
+            <objects>
+                <viewController id="5mc-4Y-wwm" customClass="AddReview" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Kd-G2-z9g"/>
+                        <viewControllerLayoutGuide type="bottom" id="f90-Fw-F7z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q9J-r6-7H3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sZo-eq-f73" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2922.5" y="-3758.5"/>
         </scene>
         <!--Service Place List-->
         <scene sceneID="lrb-tI-OqN">

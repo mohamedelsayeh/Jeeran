@@ -122,6 +122,8 @@
 		68CEEDF71D1E421E0058838A /* MyServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDF61D1E421E0058838A /* MyServiceResponse.swift */; };
 		68CEEDFA1D1E50A30058838A /* MyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDF91D1E50A30058838A /* MyServices.swift */; };
 		68CEEDFC1D1E74E70058838A /* CollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDFB1D1E74E60058838A /* CollectionData.swift */; };
+		68F8FBAA1D1EA21600E6E0DA /* ServiceFavoritAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8FBA91D1EA21600E6E0DA /* ServiceFavoritAdd.swift */; };
+		68F8FBAD1D1EB13F00E6E0DA /* PhotosShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8FBAC1D1EB13E00E6E0DA /* PhotosShow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -244,6 +246,8 @@
 		68CEEDF61D1E421E0058838A /* MyServiceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceResponse.swift; sourceTree = "<group>"; };
 		68CEEDF91D1E50A30058838A /* MyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServices.swift; sourceTree = "<group>"; };
 		68CEEDFB1D1E74E60058838A /* CollectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionData.swift; sourceTree = "<group>"; };
+		68F8FBA91D1EA21600E6E0DA /* ServiceFavoritAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFavoritAdd.swift; sourceTree = "<group>"; };
+		68F8FBAC1D1EB13E00E6E0DA /* PhotosShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosShow.swift; sourceTree = "<group>"; };
 		B08F839EE822077DEF26DD74 /* Pods-Jeeran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeeran.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jeeran/Pods-Jeeran.release.xcconfig"; sourceTree = "<group>"; };
 		DAFD4D6F192A01EF42F17BB9 /* Pods_Jeeran.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jeeran.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -548,6 +552,7 @@
 		6814F00C1D1D52DE00375983 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				68F8FBAB1D1EB13000E6E0DA /* PhotosShow */,
 				68CEEDF81D1E508D0058838A /* MyServices */,
 				6814F00D1D1D52DE00375983 /* DetailViewOfSubServices */,
 				6814F0161D1D52DE00375983 /* FavoriteServices */,
@@ -650,6 +655,7 @@
 		6814F0381D1D52F100375983 /* Pojos */ = {
 			isa = PBXGroup;
 			children = (
+				68F8FBA81D1EA1F900E6E0DA /* serviceplacefavoriteadd */,
 				68CEEDF31D1E41E30058838A /* MyServices */,
 				6814F0391D1D52F100375983 /* DetailedSubServices */,
 				6814F03C1D1D52F100375983 /* FavoriteServicesList */,
@@ -736,6 +742,22 @@
 				68CEEDF91D1E50A30058838A /* MyServices.swift */,
 			);
 			path = MyServices;
+			sourceTree = "<group>";
+		};
+		68F8FBA81D1EA1F900E6E0DA /* serviceplacefavoriteadd */ = {
+			isa = PBXGroup;
+			children = (
+				68F8FBA91D1EA21600E6E0DA /* ServiceFavoritAdd.swift */,
+			);
+			path = serviceplacefavoriteadd;
+			sourceTree = "<group>";
+		};
+		68F8FBAB1D1EB13000E6E0DA /* PhotosShow */ = {
+			isa = PBXGroup;
+			children = (
+				68F8FBAC1D1EB13E00E6E0DA /* PhotosShow.swift */,
+			);
+			path = PhotosShow;
 			sourceTree = "<group>";
 		};
 		AC0CDFBDE427ED490D924370 /* Pods */ = {
@@ -940,6 +962,7 @@
 				0435733E1D04860900C07517 /* LoginViewController.swift in Sources */,
 				1004C3F11D1A98CA006E6E11 /* RealStateAdding.swift in Sources */,
 				043573431D04860900C07517 /* MainContentView.swift in Sources */,
+				68F8FBAA1D1EA21600E6E0DA /* ServiceFavoritAdd.swift in Sources */,
 				6814F0671D1D52F100375983 /* ServicesURLs.swift in Sources */,
 				6814F05B1D1D52F100375983 /* RateList.swift in Sources */,
 				1004C4121D1A9D6C006E6E11 /* SLDiscussion.swift in Sources */,
@@ -1000,6 +1023,7 @@
 				1004C3EC1D1A987E006E6E11 /* Reviews.swift in Sources */,
 				6814F0361D1D52DE00375983 /* URLs.swift in Sources */,
 				6814F05F1D1D52F100375983 /* ResponseShowServicePlace.swift in Sources */,
+				68F8FBAD1D1EB13F00E6E0DA /* PhotosShow.swift in Sources */,
 				1004C42E1D1A9EEA006E6E11 /* NoFavorites.swift in Sources */,
 				1004C40A1D1A9D63006E6E11 /* POUser.swift in Sources */,
 				100E73341D10CD2B00CF54E2 /* MainNavigationController.swift in Sources */,

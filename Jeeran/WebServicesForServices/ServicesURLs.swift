@@ -11,11 +11,6 @@ import Foundation
 class ServicesURLs: NSObject {
   static let token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIwLCJpc3MiOiJodHRwOlwvXC9qZWVyYW4uZ240bWUuY29tXC9qZWVyYW5fdjFcL3VzZXJcL2xvZ2luIiwiaWF0IjoxNDY2NTMyOTM0LCJleHAiOjE0NjcxMzc3MzQsIm5iZiI6MTQ2NjUzMjkzNCwianRpIjoiYWZkZGFiZWU1MTM1MWNlZTg2YjI1ZmNkN2YyYWNkOGQifQ.K9g8UUx5Ni1Vf-Z3e5h9ArIZxATdVE3Gt9Ga-qYSfYg"
     
-    
-    
-//    static let token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIwLCJpc3MiOiJodHRwOlwvXC9qZWVyYW4uZ240bWUuY29tXC9qZWVyYW5fdjFcL3VzZXJcL2xvZ2luIiwiaWF0IjoxNDY2NTMyODc5LCJleHAiOjE0NjcxMzc2NzksIm5iZiI6MTQ2NjUzMjg3OSwianRpIjoiZThiNDE5OWU5NmNhM2IyYjY4MmMwYzNiNGQwY2FkZmIifQ.g99Lzp0MsTbZFBZVU2-n2mPnf54eV_36DzaxmswiQV"
-
-    
     static  let BASEURL : String = "http://jeeran.gn4me.com/jeeran_v1"
     static func servicePlaceCategoryListURL() -> String{
         let  url = BASEURL+"/​serviceplacecategory/list"

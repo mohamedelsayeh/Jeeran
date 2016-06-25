@@ -22,7 +22,10 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
     @IBOutlet weak var rateS: UILabel!
     @IBOutlet weak var serviceAddress: UILabel!
     @IBOutlet weak var aboutServiceName: UILabel!
+    @IBOutlet weak var favorite: UIButton!
+    @IBOutlet weak var favoriteLabel: UILabel!
     var main_Service_id : Int?
+    var service_place_id :Int?
     var sub_service_id : Int?
     var  serviceName : String?
     var serviceShow : ResponseShowServicePlace?
@@ -32,6 +35,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
     var latitude :Double?
     var longitude :Double?
     var telephone : String?
+    var images : [Image]?
      var paper : Paper?
     override func viewDidLoad() {
         
@@ -44,8 +48,11 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         //  loc.addGestureRecognizer(tapRecognizer)
         WebserviceManager.showServicesPlace("http://jeeran.gn4me.com/jeeran_v1/serviceplace/show", header:["Authorization": ServicesURLs.token], parameters: ["service_place_id":sub_service_id!],result: { (servicesPlace :ResponseShowServicePlace,code:String?) -> Void in
             self.serviceShow = servicesPlace
-            
+            print("444040040400404040040404044004",servicesPlace.images?.count)
+               print("444040040400404040040404044004",(servicesPlace.images?[0].origninal)!)
+            self.images = servicesPlace.images
             self.name.text = self.serviceShow?.servicePlace?[0].title
+             self.service_place_id = self.serviceShow?.servicePlace?[0].service_place_id
             self.telephone = self.serviceShow?.servicePlace?[0].mobile_1
             self.rateS.text = String((self.serviceShow?.servicePlace?[0].total_rate)!)
             self.aboutServiceName.text = "About "+(self.serviceShow?.servicePlace?[0].title)!
@@ -127,6 +134,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         {
             let view = segue.destinationViewController as! ServiceRate
             view.servicesReview = servicesReview
+            view.serviceName = self.serviceName
           //  view.isOwner =
         }
         if segue.identifier == "ServiceMap"
@@ -134,6 +142,15 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
             let view = segue.destinationViewController as! MapController
             view.latitude = self.latitude
             view.longitude = self.longitude
+            view.serviceName = self.serviceName
+            view.servicePlasceName = self.name.text
+            
+        }
+        if segue.identifier == "ViewImages"
+        {
+            let view = segue.destinationViewController as! PhotosShow
+            view.imageNames = images!
+            
         }
     }
     override func didReceiveMemoryWarning() {
@@ -278,13 +295,48 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         
         self.presentViewController(moreOprionsActionSheet, animated: true, completion: nil)
     }
+   
     
-
+    @IBAction func addToFavourite(sender: AnyObject) {
+        
+         //   print("------------------",self.service_place_id!)
+       self.favorite.setImage(UIImage(named: "favorite-icon-active.png"), forState: UIControlState.Normal)
+        //self.favorite.setColor(UIColor.redColor(), forState: UIControlState.Normal)
+        self.favoriteLabel.textColor = UIColor.redColor()
+        WebserviceManager.addServiceFavorit(ServicesURLs.servicePlaceFavoriteAddURL(), header:["Authorization":ServicesURLs.token], parameters: ["service_places_id":self.service_place_id!]) { (result, code) in
+            switch result
+            {
+            case "success":
+        
+            let alert = UIAlertController(title: "Services", message: "Add service place Done.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+                break
+            case "error":
+                let alert = UIAlertController(title: "Services", message: "Add service place Fail.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                break
+            default :
+                break
+                
+            }
+        }
+        
+        
+        
+    }
     
     
     
+    @IBAction func Showphotos(sender: AnyObject) {
+        
+        
     
-    
+        
+        
+        
+    }
     @IBAction func Back(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
         //        self.dismissViewControllerAnimated(true, completion: nil)
