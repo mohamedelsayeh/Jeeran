@@ -315,5 +315,10 @@ class WebserviceManager
             }
         }
     }
-    
+    static func addReviwServicesPlace(url : String,header:[String:String], parameters : [String : AnyObject],result: (serviceResponse :Result,code:String?)->Void)
+    {
+        Alamofire.request(.POST, url , parameters: parameters,headers:header).responseObject { (response: Response<Result, NSError>) in
+                   let serviceResponse = response.result.value
+                    }
+    }
 }

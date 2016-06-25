@@ -127,6 +127,10 @@ class PhotosShow: UIViewController, UIScrollViewDelegate{
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func bacl(sender: AnyObject) {
+        
+          self.navigationController?.popViewControllerAnimated(true)
+    }
     
     
 }

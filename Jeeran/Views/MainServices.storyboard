@@ -122,9 +122,6 @@
                                                     <constraint firstAttribute="width" constant="19" id="WdY-tN-3Yj"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="rating-icon"/>
-                                                <connections>
-                                                    <segue destination="5mc-4Y-wwm" kind="show" id="ukM-7D-wNd"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6Z-ra-TjO">
                                                 <rect key="frame" x="66" y="21" width="35" height="21"/>
@@ -162,7 +159,7 @@
                                                 <state key="normal" backgroundImage="photos-icon"/>
                                                 <connections>
                                                     <action selector="Showphotos:" destination="a1z-2u-nb5" eventType="touchUpInside" id="qBp-Qn-Nt8"/>
-                                                    <segue destination="bBh-xr-e7V" kind="show" identifier="ViewImages" id="JC3-aW-ftu"/>
+                                                    <segue destination="bBh-xr-e7V" kind="push" id="Md2-an-gGg"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-Ix-i3M">
@@ -1502,11 +1499,82 @@
                                 <action selector="Back:" destination="5Jd-2X-hHg" id="lz0-HC-EyA"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="whU-pR-m0F">
+                            <color key="tintColor" red="0.0" green="0.47450980390000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="ZHT-lS-RgI" kind="push" id="xQy-uP-XtV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pma-eS-0gS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2922.5" y="-2992.5"/>
+        </scene>
+        <!--Add Review-->
+        <scene sceneID="J81-Xu-tFA">
+            <objects>
+                <viewController title="Add Review" id="ZHT-lS-RgI" customClass="ReviwServiceViewController" customModule="Jeeran" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tmi-rs-5Bw"/>
+                        <viewControllerLayoutGuide type="bottom" id="GcN-Qn-UKA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4P3-X0-cRf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Review " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLS-Xs-Ort">
+                                <rect key="frame" x="40" y="195" width="294" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jS9-ju-MF1">
+                                <rect key="frame" x="40" y="264" width="294" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxd-lS-phC">
+                                <rect key="frame" x="149" y="341" width="65" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="zf9-1E-aey"/>
+                                </constraints>
+                                <state key="normal" title="Add ">
+                                    <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="add:" destination="ZHT-lS-RgI" eventType="touchUpInside" id="SGq-4t-6KC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jS9-ju-MF1" firstAttribute="top" secondItem="vLS-Xs-Ort" secondAttribute="bottom" constant="39" id="1ql-Jx-ryp"/>
+                            <constraint firstItem="vLS-Xs-Ort" firstAttribute="top" secondItem="tmi-rs-5Bw" secondAttribute="bottom" constant="131" id="8mH-Vk-RWk"/>
+                            <constraint firstItem="vLS-Xs-Ort" firstAttribute="leading" secondItem="jS9-ju-MF1" secondAttribute="leading" id="EL5-Nf-LEN"/>
+                            <constraint firstItem="vLS-Xs-Ort" firstAttribute="trailing" secondItem="jS9-ju-MF1" secondAttribute="trailing" id="Vzo-bM-ocE"/>
+                            <constraint firstItem="Lxd-lS-phC" firstAttribute="leading" secondItem="4P3-X0-cRf" secondAttribute="leading" constant="149" id="YRH-Qm-Wwq"/>
+                            <constraint firstItem="vLS-Xs-Ort" firstAttribute="leading" secondItem="4P3-X0-cRf" secondAttribute="leadingMargin" constant="24" id="ck4-zc-4ud"/>
+                            <constraint firstItem="vLS-Xs-Ort" firstAttribute="centerX" secondItem="4P3-X0-cRf" secondAttribute="centerX" id="qRf-ZM-so0"/>
+                            <constraint firstItem="Lxd-lS-phC" firstAttribute="top" secondItem="jS9-ju-MF1" secondAttribute="bottom" constant="47" id="xJg-lc-Glu"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hbP-hw-aNR">
+                        <barButtonItem key="leftBarButtonItem" image="back-icon" id="3nd-UT-Rjy">
+                            <color key="tintColor" red="0.0" green="0.47450980390000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="back:" destination="ZHT-lS-RgI" id="U2F-Nt-EG1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="rate" destination="jS9-ju-MF1" id="Kw3-Fv-Fgc"/>
+                        <outlet property="review" destination="vLS-Xs-Ort" id="6gi-Il-a0F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCp-WB-iPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3431.5" y="-2992.5"/>
         </scene>
         <!--Photos Show-->
         <scene sceneID="4uH-UG-U3L">
@@ -1533,31 +1601,21 @@
                             <constraint firstItem="JlW-Rt-rv6" firstAttribute="top" secondItem="U1l-Et-D9q" secondAttribute="bottom" id="zfa-fr-JnL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ENi-u9-mdR">
+                        <barButtonItem key="leftBarButtonItem" image="back-icon" id="Sp1-Nr-sLF">
+                            <color key="tintColor" red="0.0" green="0.47450980390000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="bacl:" destination="bBh-xr-e7V" id="ghi-T3-GS9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="JlW-Rt-rv6" id="YqN-vn-f1L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9H-B7-whD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2922.5" y="-4475.5"/>
-        </scene>
-        <!--Add Review-->
-        <scene sceneID="z2K-XW-Ox5">
-            <objects>
-                <viewController id="5mc-4Y-wwm" customClass="AddReview" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3Kd-G2-z9g"/>
-                        <viewControllerLayoutGuide type="bottom" id="f90-Fw-F7z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q9J-r6-7H3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sZo-eq-f73" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2922.5" y="-3758.5"/>
+            <point key="canvasLocation" x="2968.5" y="-4814.5"/>
         </scene>
         <!--Service Place List-->
         <scene sceneID="lrb-tI-OqN">

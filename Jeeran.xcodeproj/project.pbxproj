@@ -82,6 +82,8 @@
 		236DE34668219EDCC2098D41 /* Pods_Jeeran.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFD4D6F192A01EF42F17BB9 /* Pods_Jeeran.framework */; };
 		6813C4A71D1F1306008701F2 /* ServiceReviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6813C4A61D1F1306008701F2 /* ServiceReviews.swift */; };
 		6813C4A91D1F14CE008701F2 /* ReviewsServicePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6813C4A81D1F14CE008701F2 /* ReviewsServicePlace.swift */; };
+		6813C4AC1D1F3F7B008701F2 /* ReviewAdding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6813C4AB1D1F3F7B008701F2 /* ReviewAdding.swift */; };
+		6813C4AE1D1F3FB4008701F2 /* ReviwServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6813C4AD1D1F3FB4008701F2 /* ReviwServiceViewController.swift */; };
 		6814F0271D1D52DE00375983 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814F00F1D1D52DE00375983 /* CollectionCell.swift */; };
 		6814F0281D1D52DE00375983 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814F0101D1D52DE00375983 /* DetailViewController.swift */; };
 		6814F0291D1D52DE00375983 /* Paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814F0121D1D52DE00375983 /* Paper.swift */; };
@@ -206,6 +208,8 @@
 		44D98D58CC82EB98FE8BE0D8 /* Pods-Jeeran.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeeran.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jeeran/Pods-Jeeran.debug.xcconfig"; sourceTree = "<group>"; };
 		6813C4A61D1F1306008701F2 /* ServiceReviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceReviews.swift; sourceTree = "<group>"; };
 		6813C4A81D1F14CE008701F2 /* ReviewsServicePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsServicePlace.swift; sourceTree = "<group>"; };
+		6813C4AB1D1F3F7B008701F2 /* ReviewAdding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewAdding.swift; path = ../../Controller/Services/AddReview/ReviewAdding.swift; sourceTree = "<group>"; };
+		6813C4AD1D1F3FB4008701F2 /* ReviwServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviwServiceViewController.swift; sourceTree = "<group>"; };
 		6814F00F1D1D52DE00375983 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		6814F0101D1D52DE00375983 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6814F0111D1D52DE00375983 /* Jeeran-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Jeeran-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -562,9 +566,18 @@
 			path = Reviews;
 			sourceTree = "<group>";
 		};
+		6813C4AA1D1F3F64008701F2 /* AddReview */ = {
+			isa = PBXGroup;
+			children = (
+				6813C4AD1D1F3FB4008701F2 /* ReviwServiceViewController.swift */,
+			);
+			path = AddReview;
+			sourceTree = "<group>";
+		};
 		6814F00C1D1D52DE00375983 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6813C4AA1D1F3F64008701F2 /* AddReview */,
 				68F8FBAB1D1EB13000E6E0DA /* PhotosShow */,
 				68CEEDF81D1E508D0058838A /* MyServices */,
 				6814F00D1D1D52DE00375983 /* DetailViewOfSubServices */,
@@ -678,6 +691,7 @@
 				6814F0441D1D52F100375983 /* ServicePlaceList */,
 				6814F0471D1D52F100375983 /* ShowServicePlace  */,
 				6814F04E1D1D52F100375983 /* SubServices */,
+				6813C4AB1D1F3F7B008701F2 /* ReviewAdding.swift */,
 			);
 			path = Pojos;
 			sourceTree = "<group>";
@@ -970,6 +984,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6814F0681D1D52F100375983 /* WebserviceManger.swift in Sources */,
+				6813C4AE1D1F3FB4008701F2 /* ReviwServiceViewController.swift in Sources */,
 				68CEEDF71D1E421E0058838A /* MyServiceResponse.swift in Sources */,
 				1004C3EA1D1A987E006E6E11 /* Discussion.swift in Sources */,
 				6814F0581D1D52F100375983 /* ServicesPlaces.swift in Sources */,
@@ -1031,6 +1046,7 @@
 				6814F05C1D1D52F100375983 /* ResponseServiceList.swift in Sources */,
 				100E73301D10C7AF00CF54E2 /* FloatingViewController.swift in Sources */,
 				6814F0351D1D52DE00375983 /* SubServices.swift in Sources */,
+				6813C4AC1D1F3F7B008701F2 /* ReviewAdding.swift in Sources */,
 				6814F0641D1D52F100375983 /* ResponseSubServices.swift in Sources */,
 				1004C4141D1A9D6C006E6E11 /* SLReport.swift in Sources */,
 				68CEEDF51D1E42060058838A /* MyServicesPlaces.swift in Sources */,
