@@ -22,7 +22,7 @@ class WebserviceManager
             case .Success:
              //   print(response.request)
                 if let image = response.result.value {
-                    print("image downloaded: \(image)")
+                //    print("image downloaded: \(image)")
                     result(image:image,code: "error")
                 }
                                    break;

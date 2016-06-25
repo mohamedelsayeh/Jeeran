@@ -117,6 +117,7 @@ class NavigationView: UITableViewController {
     func goToMyServices() {
         let storyBoard = UIStoryboard(name: "MainServices", bundle: nil)
         let vc = storyBoard.instantiateViewControllerWithIdentifier("MyServices") as! MyServices
+          vc.title = "My Services"
      //   vc.type = JeeranUtil.MY_DISCUSSION
         (self.slideMenuController()?.mainViewController as! UINavigationController).pushViewController(vc, animated: true)
     }

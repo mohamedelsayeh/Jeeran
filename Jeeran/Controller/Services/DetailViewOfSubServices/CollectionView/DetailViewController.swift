@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
         
         if let paper = paper {
             navigationItem.title = paper.caption
-            imageView.image = paper.imageName
+          //  imageView.image = paper.imageName
         }
     }
     

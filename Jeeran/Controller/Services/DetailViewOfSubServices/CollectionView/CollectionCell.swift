@@ -21,7 +21,15 @@
             if let paper = paper {
                 name.text = paper.name
                 rateValue.text = String(paper.rate)
-                paperImageView.image = paper.imageName
+              
+                    
+                    WebserviceManager.getImage( paper.imageName! , result: { (image, code) in
+                                        // print("hy ana nrmeen")
+                                         self.paperImageView.image = image
+                                     //   print(image)
+                                    })
+
+                        //paper.imageName
                 
             }
         }

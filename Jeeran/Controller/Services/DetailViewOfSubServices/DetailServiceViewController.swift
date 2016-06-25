@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
-    private var papersDataSource = PapersDataSource()
+//    private var papersDataSource = PapersDataSource()
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var name: UILabel!
@@ -75,8 +75,8 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
             self.servicesPlace = servicesPlace
             self.fillData(servicesPlace)
             print("ghhhhh",servicesPlace.count,"ffffid ",self.main_Service_id!)
-            PapersDataSource.subServicesCategory = servicesPlace
-            print("PapersDataSource.subServicesCategory",PapersDataSource.subServicesCategory.count)
+           // PapersDataSource.subServicesCategory = servicesPlace
+        //    print("PapersDataSource.subServicesCategory",PapersDataSource.subServicesCategory.count)
             self.collectionView.reloadData()
             print("here")
             }
@@ -99,15 +99,15 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
     func  fillData(servicesPlace:[ResponseServiceList] ) -> Void {
         for item in servicesPlace {
             //var paper = Paper(caption: <#T##String#>, section: <#T##String#>, index: <#T##Int#>, rate: <#T##Int#>, name: <#T##String#>)
-            paper = Paper(caption: "ddd", section: "1", index: 1,rate:3 ,name: item.title!)
+            paper = Paper(caption: "ddd",imageName: item.logo!, section: "1", index: 1,rate:3 ,name: item.title!)
             // paper!.name="Nrmeen"
             
            // print("image", item.logo!)
-            WebserviceManager.getImage(item.logo! , result: { (image, code) in
-                print("hy ana nrmeen")
-                self.paper!.imageName = image
-                print(image)
-            })
+//            WebserviceManager.getImage(item.logo! , result: { (image, code) in
+//                print("hy ana nrmeen")
+//                self.paper!.imageName = image
+//                print(image)
+//            })
             CollectionList.append(paper!)
         }
     }
@@ -176,15 +176,15 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! CollectionCell
         
         var cellCollection : Paper?
-        print("=====================",PapersDataSource.subServicesCategory.count)
+    //    print("=====================",PapersDataSource.subServicesCategory.count)
         if servicesPlace.count == 0
         {
-            cellCollection = Paper(caption: "ddd", section: "1", index: 1,rate: 3,name: "Sun Moll")
+            cellCollection = Paper(caption: "ddd",imageName:"http://static1.yellow-pages.ph/business_photos/438185/sun_mall_thumbnail.png" , section: "1", index: 1,rate: 3,name: "Sun Moll")
             
-            WebserviceManager.getImage("http://static1.yellow-pages.ph/business_photos/438185/sun_mall_thumbnail.png" , result: { (image, code) in
-                cellCollection?.imageName = image
-                //self.collectionView.reloadData()
-            })
+//            WebserviceManager.getImage("http://static1.yellow-pages.ph/business_photos/438185/sun_mall_thumbnail.png" , result: { (image, code) in
+//                cellCollection?.imageName = image
+//                //self.collectionView.reloadData()
+//            })
             
         }
         else
