@@ -111,20 +111,31 @@ class ServiceRate: UITableViewController {
       //  print("first_name=======>",serviceReviews[indexPath.row].user!.first_name!)
 
         
-       // if self.serviceReviews[indexPath.row].rating!
+       if let tedt = self.serviceReviews[indexPath.row].rating
+  {
         let ratingBarView = cell.viewWithTag(3)
         let rateValue =  Float(self.serviceReviews[indexPath.row].rating!)
         rateView = RateView(rating:rateValue)
         rateView?.starSize = 13
         rateView?.canRate = true
         ratingBarView!.addSubview(rateView!)
+            }
+            else
+       {
         
+        let ratingBarView = cell.viewWithTag(3)
+        let rateValue =  Float(0)
+        rateView = RateView(rating:rateValue)
+        rateView?.starSize = 13
+        rateView?.canRate = true
+        ratingBarView!.addSubview(rateView!)
+            }
         let optionButton : UIButton! = cell.viewWithTag(9) as! UIButton
         if self.serviceReviews[indexPath.row].is_owner! == 0
         {
          optionButton.hidden = true
         }
-        print("servicesReview ",self.serviceReviews[indexPath.row].rating!)
+      //  print("servicesReview ",self.serviceReviews[indexPath.row].rating!)
         //        let options : UIButton! = cell.viewWithTag(9) as! UIButton
         //      //  options.addac
         //        //showMoreOptions
