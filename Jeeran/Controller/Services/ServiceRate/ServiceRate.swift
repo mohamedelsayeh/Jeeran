@@ -73,8 +73,7 @@ class ServiceRate: UITableViewController {
     ////                cell.imageCell.image = image
     ////            })
     //            //   cell.locationImage.image = images[indexPath.row+1]
-    //
-    //            print("userNAme",self.servicesReview[indexPath.row].user!.first_name!)
+    //print("userNAme",self.servicesReview[indexPath.row].user!.first_name!)
     //            cell.cellName.text = self.servicesReview[indexPath.row].user!.first_name!
     //            //         id = self.servicesPlace[indexPath.row].service_place_id!
     //          //  print("index ", self.servicesPlace[indexPath.row].service_place_id!)
@@ -93,90 +92,134 @@ class ServiceRate: UITableViewController {
         rateView?.canRate = true
         ratingBarView!.addSubview(rateView!)
         print("servicesReview ",self.servicesReview[indexPath.row].rating!)
-        let reviewImage : UIImageView! = cell.viewWithTag(1) as! UIImageView
-        let reviewPerosnName : UILabel! = cell.viewWithTag(2) as! UILabel
+//        let options : UIButton! = cell.viewWithTag(9) as! UIButton
+//      //  options.addac
+//        //showMoreOptions
+//        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ServiceRate.showMoreOptions(_:)))
         
-        let reviewDate : UILabel! = cell.viewWithTag(4) as! UILabel
-        let reviewSpec : UILabel! = cell.viewWithTag(5) as! UILabel
-        let reviewDesc : UITextView! = cell.viewWithTag(6) as! UITextView
-        
-        print("first_name=======>",servicesReview[indexPath.row].user!.first_name!)
-        reviewPerosnName.text = servicesReview[indexPath.row].user!.first_name! + " " + servicesReview[indexPath.row].user!.last_name!
-        reviewDate.text = servicesReview[indexPath.row].created_at!
-        reviewDesc.text = (servicesReview[indexPath.row].review)!
-     //   isOwner = servicesReview[indexPath.row].
-        
-        WebserviceManager.getImage( servicesReview[indexPath.row].user!.image! , result: { (image, code) in
-            reviewImage.image = image
-        })
-        //
-        
-        // reviewSpec.text = servicesReview[indexPath.row].review!
-        reviewImage.layer.borderWidth = 1.0
-        reviewImage.layer.cornerRadius = 37
-        reviewImage.clipsToBounds = true
-        reviewImage.layer.borderColor = UIColor.clearColor().CGColor
-        //   reviewImage.image = UIImage(named: "img.jpg")
-     return cell
-    }
-    //    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //
-    //        // index = indexPath.row + 1
-    //        //    nameOfService = self.mainServicesCategory[indexPath.row].title_en!
-    //        self.performSegueWithIdentifier("servicePlace", sender: self)
-    //        //        let subService = SubServices()
-    //        //        subService.main_Service_id = index!
-    //        //        self.navigationController?.pushViewController(subService, animated: false)
-    //    }
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //
-    //        if segue.identifier=="servicePlace"
-    //        {
-    //            let detailService = segue.destinationViewController as! DetailServiceViewController
-    //            detailService.serviceName = serviceName
-    //            detailService.main_Service_id = main_Service_id!
-    //        }
-    //    }
-    //
-
+    //    options.addGestureRecognizer(gestureRecognizer)
+    
+    let reviewImage : UIImageView! = cell.viewWithTag(1) as! UIImageView
     
     
-    @IBAction func showMoreOptions(sender: AnyObject) {
-//        setCurrentDiscussion(sender)
-//        print(currentDiscussion.id)
-        let moreOprionsActionSheet : UIAlertController = UIAlertController(title: "Please select option", message: "", preferredStyle: .ActionSheet)
-//        
-//        if currentDiscussion.isOwner == 1 {
-            moreOprionsActionSheet.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (topicActionSheetClosure) in
-             //   self.toggleNetworkAnimator(1)
-             //   self.serviceLayer.deleteDiscussion(self.currentDiscussion.id!)
-            }))
+    let reviewPerosnName : UILabel! = cell.viewWithTag(2) as! UILabel
+    
+    let reviewDate : UILabel! = cell.viewWithTag(4) as! UILabel
+    let reviewSpec : UILabel! = cell.viewWithTag(5) as! UILabel
+    let reviewDesc : UITextView! = cell.viewWithTag(6) as! UITextView
+    
+    print("first_name=======>",servicesReview[indexPath.row].user!.first_name!)
+    reviewPerosnName.text = servicesReview[indexPath.row].user!.first_name! + " " + servicesReview[indexPath.row].user!.last_name!
+    reviewDate.text = servicesReview[indexPath.row].created_at!
+    reviewDesc.text = (servicesReview[indexPath.row].review)!
+    //   isOwner = servicesReview[indexPath.row].
+    
+    WebserviceManager.getImage( servicesReview[indexPath.row].user!.image! , result: { (image, code) in
+    reviewImage.image = image
+    })
+    //
+    
+    // reviewSpec.text = servicesReview[indexPath.row].review!
+    reviewImage.layer.borderWidth = 1.0
+    reviewImage.layer.cornerRadius = 37
+    reviewImage.clipsToBounds = true
+    reviewImage.layer.borderColor = UIColor.clearColor().CGColor
+    //   reviewImage.image = UIImage(named: "img.jpg")
+    return cell
+}
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//
+//        // index = indexPath.row + 1
+//        //    nameOfService = self.mainServicesCategory[indexPath.row].title_en!
+//        self.performSegueWithIdentifier("servicePlace", sender: self)
+//        //        let subService = SubServices()
+//        //        subService.main_Service_id = index!
+//        //        self.navigationController?.pushViewController(subService, animated: false)
+//    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//
+//        if segue.identifier=="servicePlace"
+//        {
+//            let detailService = segue.destinationViewController as! DetailServiceViewController
+//            detailService.serviceName = serviceName
+//            detailService.main_Service_id = main_Service_id!
 //        }
-//        
-//        
-//        
+//    }
+//
+
+
+
+    @IBAction func actinForOptions(sender: AnyObject) {
+        //        setCurrentDiscussion(sender)
+        //        print(currentDiscussion.id)
+        let moreOprionsActionSheet : UIAlertController = UIAlertController(title: "Please select option", message: "", preferredStyle: .ActionSheet)
+        //
+        //        if currentDiscussion.isOwner == 1 {
+        moreOprionsActionSheet.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (topicActionSheetClosure) in
+            //   self.toggleNetworkAnimator(1)
+            //   self.serviceLayer.deleteDiscussion(self.currentDiscussion.id!)
+        }))
+        //        }
+        //
+        //
+        //
         moreOprionsActionSheet.addAction(UIAlertAction(title: "Edit", style: .Default, handler: { (topicActionSheetClosure) in
             
-       //     self.setCurrentDiscussion(sender)
+            //     self.setCurrentDiscussion(sender)
             
             //let reportReasonsView : DiscussionReport = self.storyboard!.instantiateViewControllerWithIdentifier("DiscussionReport") as! DiscussionReport
-           // reportReasonsView.reportTypeId = 4
-        //    reportReasonsView.reportId = self.currentDiscussion.id
-          //  self.navigationController?.pushViewController(reportReasonsView, animated: true)
+            // reportReasonsView.reportTypeId = 4
+            //    reportReasonsView.reportId = self.currentDiscussion.id
+            //  self.navigationController?.pushViewController(reportReasonsView, animated: true)
         }))
+        //
+        
+        moreOprionsActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (_) in
+            
+        }))
+        self.presentViewController(moreOprionsActionSheet, animated: true, completion: nil)
+    }
+//func showMoreOptions(gestureRecognizer: UIGestureRecognizer) {
 //
+//}
+
+
+    @IBAction func test(sender: AnyObject) {
+        //        setCurrentDiscussion(sender)
+        //        print(currentDiscussion.id)
+        let moreOprionsActionSheet : UIAlertController = UIAlertController(title: "Please select option", message: "", preferredStyle: .ActionSheet)
+        //
+        //        if currentDiscussion.isOwner == 1 {
+        moreOprionsActionSheet.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (topicActionSheetClosure) in
+            //   self.toggleNetworkAnimator(1)
+            //   self.serviceLayer.deleteDiscussion(self.currentDiscussion.id!)
+        }))
+        //        }
+        //
+        //
+        //
+        moreOprionsActionSheet.addAction(UIAlertAction(title: "Edit", style: .Default, handler: { (topicActionSheetClosure) in
+            
+            //     self.setCurrentDiscussion(sender)
+            
+            //let reportReasonsView : DiscussionReport = self.storyboard!.instantiateViewControllerWithIdentifier("DiscussionReport") as! DiscussionReport
+            // reportReasonsView.reportTypeId = 4
+            //    reportReasonsView.reportId = self.currentDiscussion.id
+            //  self.navigationController?.pushViewController(reportReasonsView, animated: true)
+        }))
+        //
         
         moreOprionsActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (_) in
             
         }))
         
-        self.presentViewController(moreOprionsActionSheet, animated: true, completion: nil)
+        self.navigationController?.pushViewController(moreOprionsActionSheet, animated: true)
+    //self.presentViewController(moreOprionsActionSheet, animated: true, completion: nil)
+        
     }
-    
-    
-    
-    @IBAction func Back(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-        //        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+
+@IBAction func Back(sender: AnyObject) {
+    self.navigationController?.popViewControllerAnimated(true)
+    //        self.dismissViewControllerAnimated(true, completion: nil)
+}
 }

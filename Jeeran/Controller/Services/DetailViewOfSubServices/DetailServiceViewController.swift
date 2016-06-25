@@ -27,10 +27,12 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
     var  serviceName : String?
     var serviceShow : ResponseShowServicePlace?
     var servicesPlace = [ResponseServiceList]()
+    var CollectionList = [Paper]()
     var servicesReview = [Review]()
     var latitude :Double?
     var longitude :Double?
     var telephone : String?
+     var paper : Paper?
     override func viewDidLoad() {
         
         self.navigationItem.title = serviceName
@@ -42,6 +44,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         //  loc.addGestureRecognizer(tapRecognizer)
         WebserviceManager.showServicesPlace("http://jeeran.gn4me.com/jeeran_v1/serviceplace/show", header:["Authorization": ServicesURLs.token], parameters: ["service_place_id":sub_service_id!],result: { (servicesPlace :ResponseShowServicePlace,code:String?) -> Void in
             self.serviceShow = servicesPlace
+            
             self.name.text = self.serviceShow?.servicePlace?[0].title
             self.telephone = self.serviceShow?.servicePlace?[0].mobile_1
             self.rateS.text = String((self.serviceShow?.servicePlace?[0].total_rate)!)
@@ -70,6 +73,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         )
         WebserviceManager.getServicesPlaceList(ServicesURLs.servicePlaceListURL(), header:["Authorization": ServicesURLs.token], parameters: ["service_sub_category_id":main_Service_id!],result: { (servicesPlace :[ResponseServiceList],code:String?) -> Void in
             self.servicesPlace = servicesPlace
+            self.fillData(servicesPlace)
             print("ghhhhh",servicesPlace.count,"ffffid ",self.main_Service_id!)
             PapersDataSource.subServicesCategory = servicesPlace
             print("PapersDataSource.subServicesCategory",PapersDataSource.subServicesCategory.count)
@@ -92,7 +96,21 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         self.collectionView.reloadData()
     }
     
-    
+    func  fillData(servicesPlace:[ResponseServiceList] ) -> Void {
+        for item in servicesPlace {
+            //var paper = Paper(caption: <#T##String#>, section: <#T##String#>, index: <#T##Int#>, rate: <#T##Int#>, name: <#T##String#>)
+            paper = Paper(caption: "ddd", section: "1", index: 1,rate:3 ,name: item.title!)
+            // paper!.name="Nrmeen"
+            
+           // print("image", item.logo!)
+            WebserviceManager.getImage(item.logo! , result: { (image, code) in
+                print("hy ana nrmeen")
+                self.paper!.imageName = image
+                print(image)
+            })
+            CollectionList.append(paper!)
+        }
+    }
     func labelTapped(gestureRecognizer: UITapGestureRecognizer) {
         loc.imageView?.image = UIImage(named: "location-icon-active")
         
@@ -157,33 +175,37 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as! CollectionCell
         
-        var paper : Paper?
+        var cellCollection : Paper?
         print("=====================",PapersDataSource.subServicesCategory.count)
         if servicesPlace.count == 0
         {
-            paper = Paper(caption: "ddd", section: "1", index: 1,rate: 3,name: "Sun Moll")
+            cellCollection = Paper(caption: "ddd", section: "1", index: 1,rate: 3,name: "Sun Moll")
             
             WebserviceManager.getImage("http://static1.yellow-pages.ph/business_photos/438185/sun_mall_thumbnail.png" , result: { (image, code) in
-                paper!.imageName = image
-                self.collectionView.reloadData()
+                cellCollection?.imageName = image
+                //self.collectionView.reloadData()
             })
             
         }
         else
         {
+            cellCollection = CollectionList[indexPath.row]
             //  print("heraratenig",self.servicesPlace[indexPath.row].)
             //  for subService in PapersDataSource.subServicesCategory {
-            paper = Paper(caption: "ddd", section: "1", index: 1,rate:3 ,name: self.servicesPlace[indexPath.row].title!)
+//            paper = Paper(caption: "ddd", section: "1", index: 1,rate:3 ,name: self.servicesPlace[indexPath.row].title!)
+//           // paper!.name="Nrmeen"
+//            
+//            print("image", self.servicesPlace[indexPath.row].logo!)
+//            WebserviceManager.getImage( self.servicesPlace[indexPath.row].logo! , result: { (image, code) in
+//                 print("hy ana nrmeen")
+//                self.paper!.imageName = image
+//                print(image)
+//            })
             
-            print("image", self.servicesPlace[indexPath.row].logo!)
-            WebserviceManager.getImage( self.servicesPlace[indexPath.row].logo! , result: { (image, code) in
-                paper!.imageName = image
-                print(image)
-            })
         }
         //   }
         //        if let paper = papersDataSource.paperForItemAtIndexPath(indexPath) {
-        cell.paper = paper
+        cell.paper = cellCollection
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.grayColor().CGColor
         //            //Color().CGColor

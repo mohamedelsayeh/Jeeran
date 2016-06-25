@@ -11,7 +11,7 @@ import UIKit
 class Paper {
     
     var caption: String
-    var imageName: UIImage
+    var imageName: UIImage?
     var section: String
     var index: Int
     var rate: Int
@@ -32,11 +32,10 @@ class Paper {
         self.index = index
         self.rate = rate
         self.name = name
-        self.imageName = UIImage(named: "error_image.png")!
         
     }
     convenience init(copying paper: Paper) {
-        self.init(caption: paper.caption, imageName: paper.imageName, section: paper.section, index: paper.index ,rate: paper.rate,name: paper.name)
+        self.init(caption: paper.caption, imageName: paper.imageName!, section: paper.section, index: paper.index ,rate: paper.rate,name: paper.name)
     }
     
 }

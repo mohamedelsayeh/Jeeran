@@ -121,6 +121,7 @@
 		68CEEDF51D1E42060058838A /* MyServicesPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDF41D1E42050058838A /* MyServicesPlaces.swift */; };
 		68CEEDF71D1E421E0058838A /* MyServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDF61D1E421E0058838A /* MyServiceResponse.swift */; };
 		68CEEDFA1D1E50A30058838A /* MyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDF91D1E50A30058838A /* MyServices.swift */; };
+		68CEEDFC1D1E74E70058838A /* CollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDFB1D1E74E60058838A /* CollectionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,6 +243,7 @@
 		68CEEDF41D1E42050058838A /* MyServicesPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServicesPlaces.swift; sourceTree = "<group>"; };
 		68CEEDF61D1E421E0058838A /* MyServiceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceResponse.swift; sourceTree = "<group>"; };
 		68CEEDF91D1E50A30058838A /* MyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServices.swift; sourceTree = "<group>"; };
+		68CEEDFB1D1E74E60058838A /* CollectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionData.swift; sourceTree = "<group>"; };
 		B08F839EE822077DEF26DD74 /* Pods-Jeeran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeeran.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jeeran/Pods-Jeeran.release.xcconfig"; sourceTree = "<group>"; };
 		DAFD4D6F192A01EF42F17BB9 /* Pods_Jeeran.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jeeran.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -577,6 +579,7 @@
 				6814F0121D1D52DE00375983 /* Paper.swift */,
 				6814F0131D1D52DE00375983 /* Papers.plist */,
 				6814F0141D1D52DE00375983 /* PapersDataSource.swift */,
+				68CEEDFB1D1E74E60058838A /* CollectionData.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -984,6 +987,7 @@
 				1004C4021D1A9D63006E6E11 /* POComment.swift in Sources */,
 				1004C4031D1A9D63006E6E11 /* PODiscussion.swift in Sources */,
 				6814F02D1D1D52DE00375983 /* FavoriteServices.swift in Sources */,
+				68CEEDFC1D1E74E70058838A /* CollectionData.swift in Sources */,
 				1004C4091D1A9D63006E6E11 /* POUnitTypes.swift in Sources */,
 				1004C4231D1A9DB4006E6E11 /* UIImage+CustomImage.swift in Sources */,
 				6814F05C1D1D52F100375983 /* ResponseServiceList.swift in Sources */,
