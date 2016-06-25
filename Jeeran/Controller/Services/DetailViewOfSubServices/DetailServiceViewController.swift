@@ -133,8 +133,9 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         if segue.identifier == "serviceReview"
         {
             let view = segue.destinationViewController as! ServiceRate
-            view.servicesReview = servicesReview
+         //   view.servicesReview = servicesReview
             view.serviceName = self.serviceName
+            view.service_place_id = self.service_place_id
           //  view.isOwner =
         }
         if segue.identifier == "ServiceMap"

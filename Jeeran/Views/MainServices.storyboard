@@ -1420,13 +1420,6 @@
                                                 <action selector="actinForOptions:" destination="5Jd-2X-hHg" eventType="touchUpInside" id="J8h-R0-fqr"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiY-pa-6zx">
-                                            <rect key="frame" x="33" y="140" width="46" height="30"/>
-                                            <state key="normal" title="bbbbbb" backgroundImage="Pizza"/>
-                                            <connections>
-                                                <action selector="test:" destination="5Jd-2X-hHg" eventType="touchUpInside" id="phB-AT-azK"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -1449,20 +1442,17 @@
                                         <constraint firstItem="PBJ-wF-uag" firstAttribute="top" secondItem="ucK-K8-6Qz" secondAttribute="bottom" constant="5" id="Qsk-qs-h0Q"/>
                                         <constraint firstItem="pJi-W3-9EE" firstAttribute="top" secondItem="ucK-K8-6Qz" secondAttribute="bottom" constant="6" id="ScZ-fw-qpU"/>
                                         <constraint firstItem="pJi-W3-9EE" firstAttribute="top" secondItem="ucK-K8-6Qz" secondAttribute="bottom" constant="6" id="TrZ-vP-NiP"/>
-                                        <constraint firstItem="3Mv-1J-vMy" firstAttribute="leading" secondItem="OiY-pa-6zx" secondAttribute="trailing" constant="14" id="UFZ-Zb-sCl"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3Mv-1J-vMy" secondAttribute="trailing" id="UMb-qp-vDf"/>
                                         <constraint firstItem="OPe-jL-7ZJ" firstAttribute="top" secondItem="45n-HR-hWY" secondAttribute="topMargin" constant="11" id="UoE-38-cMF"/>
                                         <constraint firstItem="top-Xd-F3g" firstAttribute="leading" secondItem="P8e-ag-WIh" secondAttribute="trailing" constant="8" id="XHT-tc-et7"/>
                                         <constraint firstItem="ucK-K8-6Qz" firstAttribute="leading" secondItem="P8e-ag-WIh" secondAttribute="trailing" constant="8" id="YVu-Lp-HxM"/>
                                         <constraint firstItem="top-Xd-F3g" firstAttribute="leading" secondItem="P8e-ag-WIh" secondAttribute="trailing" constant="8" id="ace-ZW-wec"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="OiY-pa-6zx" secondAttribute="bottom" constant="5" id="cc7-mn-gl8"/>
                                         <constraint firstItem="PBJ-wF-uag" firstAttribute="leading" secondItem="pJi-W3-9EE" secondAttribute="trailing" constant="8" symbolic="YES" id="fBo-fb-AfG"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="3Mv-1J-vMy" secondAttribute="bottom" id="gVL-Mv-aoi"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="P8e-ag-WIh" secondAttribute="bottom" constant="78" id="iBD-GR-meM"/>
                                         <constraint firstItem="3Mv-1J-vMy" firstAttribute="leading" secondItem="45n-HR-hWY" secondAttribute="leadingMargin" constant="85" id="iGB-aO-D6X"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="PBJ-wF-uag" secondAttribute="trailing" constant="16" id="okY-Dr-9js"/>
                                         <constraint firstAttribute="bottom" secondItem="pJi-W3-9EE" secondAttribute="bottom" constant="122" id="ot1-du-dYG"/>
-                                        <constraint firstItem="OiY-pa-6zx" firstAttribute="top" secondItem="P8e-ag-WIh" secondAttribute="bottom" constant="43" id="pZn-Om-yW7"/>
                                         <constraint firstItem="3Mv-1J-vMy" firstAttribute="top" secondItem="top-Xd-F3g" secondAttribute="bottom" id="q8n-jw-SAZ"/>
                                         <constraint firstItem="PBJ-wF-uag" firstAttribute="top" secondItem="ucK-K8-6Qz" secondAttribute="bottom" constant="8" symbolic="YES" id="rQ1-3b-Ays"/>
                                         <constraint firstItem="ucK-K8-6Qz" firstAttribute="top" secondItem="45n-HR-hWY" secondAttribute="topMargin" constant="8" id="rU6-BT-xMM"/>
@@ -1472,7 +1462,6 @@
                                         <constraint firstItem="3Mv-1J-vMy" firstAttribute="top" secondItem="OPe-jL-7ZJ" secondAttribute="bottom" constant="41" id="tEy-Ni-5Rg"/>
                                         <constraint firstItem="P8e-ag-WIh" firstAttribute="top" secondItem="45n-HR-hWY" secondAttribute="topMargin" constant="17" id="tWf-SO-BKy"/>
                                         <constraint firstItem="pJi-W3-9EE" firstAttribute="leading" secondItem="P8e-ag-WIh" secondAttribute="trailing" constant="8" id="w8r-Eg-VWM"/>
-                                        <constraint firstItem="OiY-pa-6zx" firstAttribute="leading" secondItem="45n-HR-hWY" secondAttribute="leadingMargin" constant="25" id="wGp-DT-7oe"/>
                                         <constraint firstItem="pJi-W3-9EE" firstAttribute="leading" secondItem="top-Xd-F3g" secondAttribute="leading" id="whE-jb-aQ8"/>
                                     </constraints>
                                     <variation key="default">

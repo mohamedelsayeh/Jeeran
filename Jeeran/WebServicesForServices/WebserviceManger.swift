@@ -20,14 +20,14 @@ class WebserviceManager
             switch response.result
             {
             case .Success:
-             //   print(response.request)
+                //   print(response.request)
                 if let image = response.result.value {
-                //    print("image downloaded: \(image)")
+                    //    print("image downloaded: \(image)")
                     result(image:image,code: "error")
                 }
-                                   break;
+                break;
             case .Failure(let _error):
-               // result(image:image,code: "error")
+                // result(image:image,code: "error")
                 print("Error")
                 break;
             }
@@ -158,7 +158,7 @@ class WebserviceManager
                 switch status!
                 {
                 case 0:
-                   result(servicesPlace:(serviceResponse?.response)!,code: "error")
+                    result(servicesPlace:(serviceResponse?.response)!,code: "error")
                     break;
                     
                 default:
@@ -190,13 +190,13 @@ class WebserviceManager
                     result(servicesPlace:(serviceResponse?.response)!,code: "error")
                     break;
                 default:
-            //      result(servicesPlace:nil,code: "error")
+                    //      result(servicesPlace:nil,code: "error")
                     break;
                 }
                 
                 break;
             case .Failure(let _error):
-       //     result(servicesPlace:nil,code: "error")
+                //     result(servicesPlace:nil,code: "error")
                 print(_error.code)
                 print(response.result)
                 break;
@@ -232,8 +232,8 @@ class WebserviceManager
             }
         }
     }
-
-
+    
+    
     static func showMyServicesPlace(url : String,header:[String:String], parameters : [String : AnyObject],result: (servicesPlace :[MyServiceResponse],code:String?)->Void)
     {
         Alamofire.request(.POST, url , parameters: parameters,headers:header).responseObject { (response: Response<MyServicesPlaces, NSError>) in
@@ -265,9 +265,9 @@ class WebserviceManager
     static func addServiceFavorit(url : String,header:[String:String], parameters : [String : Int],result: (result :ServiceFavoritAdd,code:String?)->Void)
     {
         Alamofire.request(.POST, url , parameters: parameters,headers:header).responseObject { (response: Response<ServiceFavoritAdd, NSError>) in
-          let serviceResponse = response.result.value
-               result(result:(serviceResponse)!,code: "error")
-                     }
+            let serviceResponse = response.result.value
+            result(result:(serviceResponse)!,code: "error")
+        }
     }
     static func deleteServiceFavorit(url : String,header:[String:String], parameters : [String : Int],result: (result :Result,code:String?)->Void)
     {
@@ -276,5 +276,44 @@ class WebserviceManager
             result(result:(serviceResponse)!,code: "error")
         }
     }
-
+    
+    static func rateServicePlace(url : String,header:[String:String], parameters : [String : Int],result: (service_reviews :[ServiceReviews],code:String?)->Void)
+    {
+        Alamofire.request(.GET, url,headers:header).responseObject { (response: Response<ReviewsServicePlace, NSError>) in
+            //    Alamofire.request(.GET, url).responseArray { (response: Response<ReviewsServicePlace, NSError>) in
+//            print(response.data)
+//            print(result)
+//            //    Response<ReviewsServicePlace, NSError>) in
+            switch response.result
+            {
+            case .Success:
+                print("jjjjjjjjjjjj")
+                let serviceResponse = response.result.value!
+                    print("jjjjjjjjjjjj", response.result.value!)
+                print((serviceResponse.result?.errorcode)!)
+                let status = (serviceResponse.result?.errorcode)!
+                switch status
+                {
+                case 0:
+                    print("hereee")
+                        print("hereee",(serviceResponse.response)!.count)
+                    print("hereee")
+                    print("hereee",(serviceResponse.response)![0].user?.first_name)
+                    result(service_reviews:(serviceResponse.response)!,code: "error")
+                    break;
+                default:
+                    //      result(servicesPlace:nil,code: "error")
+                    break;
+                }
+                
+                break;
+            case .Failure(let _error):
+                //     result(servicesPlace:nil,code: "error")
+                print(_error.code)
+                print(response.result)
+                break;
+            }
+        }
+    }
+    
 }
