@@ -118,6 +118,9 @@
 		6814F0671D1D52F100375983 /* ServicesURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814F0521D1D52F100375983 /* ServicesURLs.swift */; };
 		6814F0681D1D52F100375983 /* WebserviceManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6814F0531D1D52F100375983 /* WebserviceManger.swift */; };
 		6814F06A1D1D535200375983 /* MainServices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6814F0691D1D535200375983 /* MainServices.storyboard */; };
+		68CEEDF51D1E42060058838A /* MyServicesPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDF41D1E42050058838A /* MyServicesPlaces.swift */; };
+		68CEEDF71D1E421E0058838A /* MyServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDF61D1E421E0058838A /* MyServiceResponse.swift */; };
+		68CEEDFA1D1E50A30058838A /* MyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CEEDF91D1E50A30058838A /* MyServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -236,6 +239,9 @@
 		6814F0521D1D52F100375983 /* ServicesURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesURLs.swift; sourceTree = "<group>"; };
 		6814F0531D1D52F100375983 /* WebserviceManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceManger.swift; sourceTree = "<group>"; };
 		6814F0691D1D535200375983 /* MainServices.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainServices.storyboard; sourceTree = "<group>"; };
+		68CEEDF41D1E42050058838A /* MyServicesPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServicesPlaces.swift; sourceTree = "<group>"; };
+		68CEEDF61D1E421E0058838A /* MyServiceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceResponse.swift; sourceTree = "<group>"; };
+		68CEEDF91D1E50A30058838A /* MyServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServices.swift; sourceTree = "<group>"; };
 		B08F839EE822077DEF26DD74 /* Pods-Jeeran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeeran.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jeeran/Pods-Jeeran.release.xcconfig"; sourceTree = "<group>"; };
 		DAFD4D6F192A01EF42F17BB9 /* Pods_Jeeran.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jeeran.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -540,6 +546,7 @@
 		6814F00C1D1D52DE00375983 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				68CEEDF81D1E508D0058838A /* MyServices */,
 				6814F00D1D1D52DE00375983 /* DetailViewOfSubServices */,
 				6814F0161D1D52DE00375983 /* FavoriteServices */,
 				6814F0181D1D52DE00375983 /* Jeeran-Bridging-Header.h */,
@@ -640,6 +647,7 @@
 		6814F0381D1D52F100375983 /* Pojos */ = {
 			isa = PBXGroup;
 			children = (
+				68CEEDF31D1E41E30058838A /* MyServices */,
 				6814F0391D1D52F100375983 /* DetailedSubServices */,
 				6814F03C1D1D52F100375983 /* FavoriteServicesList */,
 				6814F0401D1D52F100375983 /* MainServices */,
@@ -708,6 +716,23 @@
 				6814F0501D1D52F100375983 /* SubServicesList.swift */,
 			);
 			path = SubServices;
+			sourceTree = "<group>";
+		};
+		68CEEDF31D1E41E30058838A /* MyServices */ = {
+			isa = PBXGroup;
+			children = (
+				68CEEDF41D1E42050058838A /* MyServicesPlaces.swift */,
+				68CEEDF61D1E421E0058838A /* MyServiceResponse.swift */,
+			);
+			path = MyServices;
+			sourceTree = "<group>";
+		};
+		68CEEDF81D1E508D0058838A /* MyServices */ = {
+			isa = PBXGroup;
+			children = (
+				68CEEDF91D1E50A30058838A /* MyServices.swift */,
+			);
+			path = MyServices;
 			sourceTree = "<group>";
 		};
 		AC0CDFBDE427ED490D924370 /* Pods */ = {
@@ -906,6 +931,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6814F0681D1D52F100375983 /* WebserviceManger.swift in Sources */,
+				68CEEDF71D1E421E0058838A /* MyServiceResponse.swift in Sources */,
 				1004C3EA1D1A987E006E6E11 /* Discussion.swift in Sources */,
 				6814F0581D1D52F100375983 /* ServicesPlaces.swift in Sources */,
 				0435733E1D04860900C07517 /* LoginViewController.swift in Sources */,
@@ -927,6 +953,7 @@
 				1004C4211D1A9DB4006E6E11 /* JeeranUtil.swift in Sources */,
 				1004C4011D1A9D63006E6E11 /* POAmenities.swift in Sources */,
 				100E73321D10CC9900CF54E2 /* FloatingNavigationController.swift in Sources */,
+				68CEEDFA1D1E50A30058838A /* MyServices.swift in Sources */,
 				1004C41F1D1A9DB4006E6E11 /* Double+Custom.swift in Sources */,
 				0413E0EF1CF2580B0042943F /* Jeeran.xcdatamodeld in Sources */,
 				6814F05A1D1D52F100375983 /* ResponseService.swift in Sources */,
@@ -964,6 +991,7 @@
 				6814F0351D1D52DE00375983 /* SubServices.swift in Sources */,
 				6814F0641D1D52F100375983 /* ResponseSubServices.swift in Sources */,
 				1004C4141D1A9D6C006E6E11 /* SLReport.swift in Sources */,
+				68CEEDF51D1E42060058838A /* MyServicesPlaces.swift in Sources */,
 				100E73361D10CF9B00CF54E2 /* FloatingButtonDelegate.swift in Sources */,
 				1004C3EC1D1A987E006E6E11 /* Reviews.swift in Sources */,
 				6814F0361D1D52DE00375983 /* URLs.swift in Sources */,

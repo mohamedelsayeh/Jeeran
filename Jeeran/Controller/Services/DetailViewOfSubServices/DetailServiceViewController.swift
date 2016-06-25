@@ -62,7 +62,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
             self.latitude = (self.serviceShow?.servicePlace?[0].latitude)!
             self.longitude = (self.serviceShow?.servicePlace?[0].longitude)!
             print("ddddd",self.servicesReview.count)
-            print("ddddd",self.servicesReview[0].created_at!)
+      //      print("ddddd",self.servicesReview[0].created_at!)
             WebserviceManager.getImage((self.serviceShow?.servicePlace?[0].logo)!, result: { (image, code) in
                 self.serviceImage.image = image
             })
@@ -109,6 +109,7 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
         {
             let view = segue.destinationViewController as! ServiceRate
             view.servicesReview = servicesReview
+          //  view.isOwner =
         }
         if segue.identifier == "ServiceMap"
         {
@@ -224,6 +225,42 @@ class DetailServiceViewController: UIViewController ,UICollectionViewDelegate,UI
     //            detailViewController
     //        }
     //    }
+    @IBAction func showMoreOptions(sender: AnyObject) {
+        //        setCurrentDiscussion(sender)
+        //        print(currentDiscussion.id)
+        let moreOprionsActionSheet : UIAlertController = UIAlertController(title: "Please select option", message: "", preferredStyle: .ActionSheet)
+        //
+        //        if currentDiscussion.isOwner == 1 {
+        moreOprionsActionSheet.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (topicActionSheetClosure) in
+            //   self.toggleNetworkAnimator(1)
+            //   self.serviceLayer.deleteDiscussion(self.currentDiscussion.id!)
+        }))
+        //        }
+        //
+        //
+        //
+        moreOprionsActionSheet.addAction(UIAlertAction(title: "Edit", style: .Default, handler: { (topicActionSheetClosure) in
+            
+            //     self.setCurrentDiscussion(sender)
+            
+            //let reportReasonsView : DiscussionReport = self.storyboard!.instantiateViewControllerWithIdentifier("DiscussionReport") as! DiscussionReport
+            // reportReasonsView.reportTypeId = 4
+            //    reportReasonsView.reportId = self.currentDiscussion.id
+            //  self.navigationController?.pushViewController(reportReasonsView, animated: true)
+        }))
+        //
+        
+        moreOprionsActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (_) in
+            
+        }))
+        
+        self.presentViewController(moreOprionsActionSheet, animated: true, completion: nil)
+    }
+    
+
+    
+    
+    
     
     
     @IBAction func Back(sender: AnyObject) {

@@ -48,7 +48,7 @@
                             <constraint firstItem="mA4-WH-g8V" firstAttribute="top" secondItem="Tb4-LZ-wXj" secondAttribute="bottom" constant="14" id="sm1-6a-sdR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" image="delet.png" id="muy-ZC-JEF"/>
+                    <tabBarItem key="tabBarItem" title="More" image="arrow-icon.png" id="muy-ZC-JEF"/>
                     <navigationItem key="navigationItem" id="hpX-uU-5sB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
@@ -189,7 +189,7 @@
                             <outlet property="delegate" destination="Jq9-qr-ffM" id="Oji-nL-d3y"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Services" image="delet.png" id="YcY-jK-0ux"/>
+                    <tabBarItem key="tabBarItem" title="Services" image="arrow-icon.png" id="YcY-jK-0ux"/>
                     <navigationItem key="navigationItem" title="Reviews" id="NHe-8E-e5s"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
@@ -206,10 +206,10 @@
                         <viewControllerLayoutGuide type="bottom" id="wkd-8y-n5x"/>
                     </layoutGuides>
                     <view key="view" tag="300" contentMode="scaleToFill" id="BcK-Ot-lXz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="donthave.png" translatesAutoresizingMaskIntoConstraints="NO" id="40P-p9-bAe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="donthave.png" translatesAutoresizingMaskIntoConstraints="NO" id="40P-p9-bAe">
                                 <rect key="frame" x="126" y="149" width="162" height="251"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="Fna-MH-rRK"/>
@@ -236,7 +236,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="You Don`t Have favorite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHn-Nt-oHY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="You Don`t Have favorite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHn-Nt-oHY">
                                 <rect key="frame" x="135" y="420" width="146" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.72156862745098038" green="0.7803921568627451" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
@@ -363,7 +363,7 @@
                             <outlet property="delegate" destination="rBg-Y4-Na3" id="LQi-NQ-tll"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Services" image="delet.png" id="kpl-LA-xTo">
+                    <tabBarItem key="tabBarItem" title="Services" image="arrow-icon.png" id="kpl-LA-xTo">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
                         </userDefinedRuntimeAttributes>
@@ -407,7 +407,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNW-2I-1ZC">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aNW-2I-1ZC">
                                 <rect key="frame" x="20" y="226" width="374" height="489"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apayment for rent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEz-dE-gKN">
@@ -1022,7 +1022,7 @@
                                     <constraint firstItem="6ZJ-3N-aDZ" firstAttribute="height" secondItem="rS1-8l-xpT" secondAttribute="height" id="zST-Fq-GXX"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="276" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bsX-ww-bLb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="276" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bsX-ww-bLb">
                                 <rect key="frame" x="20" y="234" width="374" height="418"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1468,6 +1468,7 @@
                     <connections>
                         <segue destination="F3g-Wr-L7V" kind="relationship" relationship="viewControllers" id="Bg1-Fh-bcf"/>
                         <segue destination="Jdd-0D-ll1" kind="relationship" relationship="viewControllers" id="yfe-lZ-tC2"/>
+                        <segue destination="vLf-vM-3a5" kind="relationship" relationship="viewControllers" id="DkL-i3-6IT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaD-HD-k5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1684,10 +1685,10 @@
                         <viewControllerLayoutGuide type="bottom" id="UKB-tH-Szu"/>
                     </layoutGuides>
                     <view key="view" tag="300" contentMode="scaleToFill" id="ooZ-La-2PD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="NoDataFound" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kC1-cE-FS2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="NoDataFound" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kC1-cE-FS2">
                                 <rect key="frame" x="98" y="193" width="219" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="7Yo-3h-ERe"/>
@@ -1714,7 +1715,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="No Data Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm7-CX-Dez">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="No Data Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm7-CX-Dez">
                                 <rect key="frame" x="163" y="418" width="91" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.72156862749999995" green="0.78039215689999997" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2246,26 +2247,117 @@
             </objects>
             <point key="canvasLocation" x="768" y="-1366"/>
         </scene>
+        <!--Services-->
+        <scene sceneID="06K-JB-ld8">
+            <objects>
+                <tableViewController storyboardIdentifier="FavoriteServices" id="vLf-vM-3a5" customClass="FavoriteServices" customModule="Jeeran" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="98" sectionHeaderHeight="18" sectionFooterHeight="18" id="Uzk-gj-QwX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="serviceCell" rowHeight="75" id="sAA-a9-akn" customClass="SubServiceCell" customModule="Jeeran" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sAA-a9-akn" id="xeo-rx-imC">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cortigianoRestaurant" translatesAutoresizingMaskIntoConstraints="NO" id="hrV-xs-hky">
+                                            <rect key="frame" x="13" y="8" width="79" height="61"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="79" id="Wbg-a7-jyS"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Grand Market, Al Rehab City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmm-0W-72L">
+                                            <rect key="frame" x="100" y="4" width="281" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="hXz-ds-Bac"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47450980390000003" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationtable-icon" translatesAutoresizingMaskIntoConstraints="NO" id="lRD-SW-piF">
+                                            <rect key="frame" x="100" y="31" width="20" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="Ykt-6X-ZHq"/>
+                                                <constraint firstAttribute="width" constant="20" id="p7l-Vv-ZTa"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click to chow address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psr-eE-Kkd">
+                                            <rect key="frame" x="128" y="34" width="142" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="142" id="Ual-3t-xE9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.72156862749999995" green="0.78039215689999997" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Psr-eE-Kkd" firstAttribute="leading" secondItem="lRD-SW-piF" secondAttribute="trailing" constant="8" id="1FM-2B-ZP2"/>
+                                        <constraint firstItem="lRD-SW-piF" firstAttribute="leading" secondItem="hrV-xs-hky" secondAttribute="trailing" constant="8" id="1jI-Eo-tba"/>
+                                        <constraint firstItem="hrV-xs-hky" firstAttribute="top" secondItem="xeo-rx-imC" secondAttribute="top" constant="8" id="8sa-Wz-tPS"/>
+                                        <constraint firstAttribute="bottom" secondItem="Psr-eE-Kkd" secondAttribute="bottom" constant="23" id="DHD-ym-lpt"/>
+                                        <constraint firstItem="xmm-0W-72L" firstAttribute="leading" secondItem="hrV-xs-hky" secondAttribute="trailing" constant="8" id="FDC-dg-f61"/>
+                                        <constraint firstItem="lRD-SW-piF" firstAttribute="top" secondItem="xmm-0W-72L" secondAttribute="bottom" constant="6" id="bbJ-YI-75d"/>
+                                        <constraint firstAttribute="bottom" secondItem="hrV-xs-hky" secondAttribute="bottom" constant="5" id="cey-36-q9C"/>
+                                        <constraint firstItem="Psr-eE-Kkd" firstAttribute="top" secondItem="xmm-0W-72L" secondAttribute="bottom" constant="9" id="pc7-2S-2Rb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="lRD-SW-piF" secondAttribute="bottom" constant="11" id="qxS-Im-Yuc"/>
+                                        <constraint firstItem="hrV-xs-hky" firstAttribute="leading" secondItem="xeo-rx-imC" secondAttribute="leading" constant="13" id="vWo-ez-aZ7"/>
+                                        <constraint firstAttribute="trailing" secondItem="xmm-0W-72L" secondAttribute="trailing" id="wOE-BI-Jjh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="cellName" destination="xmm-0W-72L" id="5Sb-pM-Fn0"/>
+                                    <outlet property="clickLabel" destination="Psr-eE-Kkd" id="Eb1-WF-b7M"/>
+                                    <outlet property="imageCell" destination="hrV-xs-hky" id="JVo-e8-vws"/>
+                                    <outlet property="locationImage" destination="lRD-SW-piF" id="epz-h7-Hqo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vLf-vM-3a5" id="Vuh-34-Ly1"/>
+                            <outlet property="delegate" destination="vLf-vM-3a5" id="fCL-pU-zNl"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Services" image="services-icon.png" id="nRC-A4-C2L">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Services" id="aLu-XT-bRv"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KOh-db-jPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3088.5" y="-1766.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow-icon.png" width="22" height="26"/>
         <image name="categeory-arrow-icon" width="5" height="3"/>
         <image name="comment-icon" width="19" height="17"/>
+        <image name="cortigianoRestaurant" width="225" height="224"/>
         <image name="default-photo" width="46" height="46"/>
         <image name="del.png" width="128" height="128"/>
-        <image name="delet.png" width="219" height="205"/>
         <image name="donthave.png" width="162" height="251"/>
         <image name="favorite-icon" width="19" height="18"/>
         <image name="home2.jpeg" width="1024" height="713"/>
         <image name="images-icon" width="115" height="115"/>
         <image name="img.jpg" width="160" height="160"/>
         <image name="location-icon" width="22" height="26"/>
+        <image name="locationtable-icon" width="22" height="26"/>
         <image name="logo" width="219" height="205"/>
         <image name="options-icon" width="4" height="16"/>
         <image name="photo-icon" width="13" height="13"/>
         <image name="service.png" width="128" height="128"/>
+        <image name="services-icon.png" width="30" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pBS-7j-763"/>
-        <segue reference="aD5-fg-fHJ"/>
+        <segue reference="u1g-sk-6ZU"/>
+        <segue reference="PC3-SB-MCz"/>
     </inferredMetricsTieBreakers>
 </document>

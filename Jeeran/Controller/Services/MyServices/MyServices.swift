@@ -8,20 +8,21 @@
 
 import UIKit
 
-class FavoriteServices: UITableViewController {
-    var servicesPlaces : ResponseFavoriteServices?
+class MyServices: UITableViewController {
+    var servicesPlaces : [MyServiceResponse]?
     var indexOfView : Int?
     var user_id : Int?
     var main_Service_id : Int?
     var id : Int?
     var serviceName : String?
+    
     override func viewDidLoad() {
         user_id = 1
         super.viewDidLoad()
-        WebserviceManager.shoFavoritewServicesPlace(ServicesURLs.servicePlaceFavoriteListURL(),header:["Authorization": ServicesURLs.token], parameters: ["user_id": self.user_id!],result: {(mainServices :ResponseFavoriteServices,code:String?)->Void
+        WebserviceManager.showMyServicesPlace(ServicesURLs.servicePlaceListURL(),header:["Authorization": ServicesURLs.token], parameters: ["user_id": self.user_id!],result: {(mainServices :[MyServiceResponse],code:String?)->Void
             in
             self.servicesPlaces = mainServices
-            print("here",self.servicesPlaces?.serviceplaces?.count)
+      //      print("here",self.servicesPlaces?.serviceplaces?.count)
             //            print("here",self.servicesPlaces?.serviceplaces![0].favorite_service_place_id!)
             self.tableView.hidden = false
             self.tableView.reloadData()
@@ -44,13 +45,13 @@ class FavoriteServices: UITableViewController {
     }
     //table part
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("============>>>>>",self.servicesPlaces?.serviceplaces!.count)
+       // print("============>>>>>",self.servicesPlaces?.serviceplaces!.count)
         if self.servicesPlaces == nil
         {return 0;}
         else
         {
-            print("============>>>>>",self.servicesPlaces?.serviceplaces!.count)
-            return (self.servicesPlaces?.serviceplaces!.count)!;
+            print("============>>>>>",self.servicesPlaces?.count)
+            return (self.servicesPlaces?.count)!;
         }
         
     }
@@ -61,13 +62,12 @@ class FavoriteServices: UITableViewController {
         {
         }
         else{
-           print("h==========>>>>>",(self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.logo)!)
             
-                        WebserviceManager.getImage( (self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.logo)! , result: { (image, code) in
-                            cell.imageCell.image = image
-                        })
+            WebserviceManager.getImage( (self.servicesPlaces![indexPath.row].logo)! , result: { (image, code) in
+                cell.imageCell.image = image
+            })
             
-         cell.cellName.text = (self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.title)!
+            cell.cellName.text = (self.servicesPlaces![indexPath.row].title)!
             //    cell.cellName.text = self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.title!
             
             //   print("index ", self.servicesPlace[indexPath.row].service_place_id!)
@@ -77,32 +77,26 @@ class FavoriteServices: UITableViewController {
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-         indexOfView = (self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.service_place_id)!
-         main_Service_id = (self.servicesPlaces?.serviceplaces![indexPath.row].service_place!.service_sub_category_id)!
-    
-//        print("gggggggggggggggg=========>>>>>",self.subServicesCategory[indexPath.row].service_main_category_Id!)
-//        self.sub_Service_id = self.subServicesCategory[indexPath.row].service_main_category_Id!
-
- 
+        indexOfView = (self.servicesPlaces![indexPath.row].service_place_id)!
+        main_Service_id = (self.servicesPlaces![indexPath.row].service_sub_category_id)!
+        
         let storyBoard = UIStoryboard(name: "MainServices", bundle: nil)
         let detailService = storyBoard.instantiateViewControllerWithIdentifier("DetailsSubView") as! DetailServiceViewController
         detailService.serviceName = serviceName
         detailService.main_Service_id = main_Service_id!
         detailService.sub_service_id = indexOfView
         self.navigationController?.pushViewController(detailService, animated: true)
-
-        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-//        if segue.identifier=="servicePlace"
-//        {
-//
-//            
-//// self.presentViewController(storyBoard.instantiateViewControllerWithIdentifier("Services"), animated: true, completion: nil)
-////            let detailService = segue.destinationViewController as! DetailServiceViewController
-//      
-//        }
+        //        if segue.identifier=="servicePlace"
+        //        {
+        //
+        //
+        //// self.presentViewController(storyBoard.instantiateViewControllerWithIdentifier("Services"), animated: true, completion: nil)
+        ////            let detailService = segue.destinationViewController as! DetailServiceViewController
+        //      
+        //        }
     }
     
 }

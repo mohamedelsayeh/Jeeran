@@ -232,4 +232,34 @@ class WebserviceManager
             }
         }
     }
+
+
+    static func showMyServicesPlace(url : String,header:[String:String], parameters : [String : AnyObject],result: (servicesPlace :[MyServiceResponse],code:String?)->Void)
+    {
+        Alamofire.request(.POST, url , parameters: parameters,headers:header).responseObject { (response: Response<MyServicesPlaces, NSError>) in
+            switch response.result
+            {
+            case .Success:
+                let serviceResponse = response.result.value
+                let status = serviceResponse?.result?.errorcode!
+                switch status!
+                {
+                case 0:
+                    result(servicesPlace:(serviceResponse?.response)!,code: "error")
+                    break;
+                default:
+                    //      result(servicesPlace:nil,code: "error")
+                    break;
+                }
+                
+                break;
+            case .Failure(let _error):
+                //     result(servicesPlace:nil,code: "error")
+                print(_error.code)
+                print(response.result)
+                break;
+            }
+        }
+    }
+
 }

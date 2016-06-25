@@ -55,6 +55,7 @@ class NavigationView: UITableViewController {
                     (self.slideMenuController()?.mainViewController as! UINavigationController).pushViewController((storyboard?.instantiateViewControllerWithIdentifier("MyAccountView"))!, animated: true)
                     break
                 case 2:
+                    goToMyServices()
                     self.closeLeft()
                     break
                 case 3:
@@ -113,6 +114,12 @@ class NavigationView: UITableViewController {
         (self.slideMenuController()?.mainViewController as! UINavigationController).pushViewController(vc, animated: true)
     }
     
+    func goToMyServices() {
+        let storyBoard = UIStoryboard(name: "MainServices", bundle: nil)
+        let vc = storyBoard.instantiateViewControllerWithIdentifier("MyServices") as! MyServices
+     //   vc.type = JeeranUtil.MY_DISCUSSION
+        (self.slideMenuController()?.mainViewController as! UINavigationController).pushViewController(vc, animated: true)
+    }
     func goToMyFavorite() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewControllerWithIdentifier("MyFavoriteTabView") as! UITabBarController
